@@ -31,9 +31,9 @@ np.case   <-  sapply(strsplit(case.dir, "/CA"), function(x){x[1]})
 np.case   <-  sapply(strsplit(np.case,  "//"),  function(x){x[2]})
 
 
-#for (n.case in np.case) {
-for (nc in 1:704) {
-  n.case      <-  np.case[nc]
+for (n.case in np.case) {
+#for (nc in 4:222) {
+#  n.case      <-  np.case[nc]
   print(n.case)
   anno        <-  read.csv(paste0("./", n.case, "-", n.contl, "_Common-location_ref-0001.csv"))
   cnum.contl  <-  which(colnames(anno) == n.contl)
@@ -149,3 +149,6 @@ for (nc in 1:704) {
   }
   
 }
+
+
+

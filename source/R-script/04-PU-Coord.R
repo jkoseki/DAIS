@@ -15,11 +15,7 @@ np.target   <-  sapply(strsplit(target.dir, "/CA"), function(x){x[1]})
 np.target   <-  sapply(strsplit(np.target,  "//"),  function(x){x[2]})
 
 
-#for (n.target in np.target) {
-for (ntg in 32:length(np.target)) {
-  nntg <- paste(ntg, "/", length(np.target))
-  print(nntg)
-  n.target  <-  np.target[ntg]
+for (n.target in np.target) {
   # load file list
   mut.list  <-  list.files(paste0("./", n.target), full.names = TRUE, recursive = TRUE)
   mut.list  <-  mut.list[grep("Location", mut.list)]

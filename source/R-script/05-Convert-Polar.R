@@ -14,6 +14,7 @@ n.target    <-  sapply(strsplit(n.target,   "//"),  function(x){x[2]})
 
 
 for (t.type in n.target) {
+  print(t.type)
   t.path         <-  paste("./", t.type, "/Pu-loc_2/", sep = "")
   pu.coord.list  <-  list.files(t.path, full.names = TRUE)
   
@@ -21,15 +22,26 @@ for (t.type in n.target) {
   
   
   for (i in 1:file.num) {
+    print(i)
     i.file  <-  fread(pu.coord.list[i])
     
-    i.file                                           %>%
-      mutate(r     = sqrt(birth^2 + death^2))        %>%
-      mutate(Theta = atan((death - birth) / birth))  %>%
-      mutate(V1    = V1 - .$V1[1] + 1)               %>%
-      select(V1, r, Theta)                           -> o.file
+    if (nrow(i.file) > 1) {
+      i.file                                           %>%
+        mutate(r     = sqrt(birth^2 + death^2))        %>%
+        mutate(Theta = atan((death - birth) / birth))  %>%
+        mutate(V1    = V1 - .$V1[1] + 1)               %>%
+        select(V1, r, Theta)                           -> o.file
     
-    colnames(o.file)[1]  <-  "Step"
+      colnames(o.file)[1]  <-  "Step"
+    } else {
+      i.file                                           %>%
+        mutate(r = "NA")                               %>%
+        mutate(Theta = "NA")                           %>%
+        mutate(V1 = "NA")                              %>%
+        select(V1, r, Theta)                           -> o.file
+    
+      colnames(o.file)[1]  <-  "Step"
+    }
     
     o.name  <-  paste("./", t.type, "/Polar-loc_2/", formatC(i,width=4,flag="0"), "-point_polar-coordinate.csv", sep = "")
     
