@@ -4,7 +4,7 @@
 # load library
 library(data.table)
 library(tidyverse)
-library(kernlab)
+#library(kernlab)
 
 
 target.dir  <-  list.dirs("./")
