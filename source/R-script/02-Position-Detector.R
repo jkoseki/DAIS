@@ -1,4 +1,4 @@
-### detection of the position for SHIROKANE
+### detection of the position (Additional Step)
 ##
 #
 #library(tidyr)
