@@ -1,4 +1,4 @@
-### detection of the position (Additional Step)
+### detection of the position
 ##
 #
 #library(tidyr)
@@ -18,7 +18,8 @@ for (t.dir in target.dir) {
   
   t.dir_loc        <-  sapply(strsplit(t.dir, "/CA"), function(x){x[1]})
   
-  for (i in 1:(num.files-1)) {
+  # Only i=1 is required, not more than 2.
+  for (i in 1:(num.files-1)) {　
     print(paste0(i, " / ", (num.files-1)))
     f.data      <-  fread(file.list.wt[i])
     loc.dim     <-  f.data$Dimension
