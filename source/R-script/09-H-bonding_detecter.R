@@ -5,6 +5,7 @@ library(data.table)
 library(tidyverse)
 library(bio3d)
 library(stringr)
+library(dplyr)
 
 #set your  contl
 n.contl  <-  "WT"
@@ -25,9 +26,7 @@ pdb.wt   <-  pdb.wt[wt.id]
 
 
 #==========
-#for (case.name in np.case) {
-for(cn in 5:length(np.case)) {
-  case.name  <-  np.case[cn]
+for (case.name in np.case) {
   print(case.name)
   pdb.mut    <-  list.files(paste0("./", case.name, "/"), full.names = TRUE, recursive = FALSE)
   mut.id     <-  grep(".pdb", pdb.mut)
@@ -134,22 +133,13 @@ for(cn in 5:length(np.case)) {
                                  != str_sub(mut.data2$elety[id.mut[, 2]], 1, 1) &
                                    str_sub(mut.data2$elety[id.mut[, 1]], 1, 1) == "H"), ]
       
-
-      if (length(id.wt) > 2) {      
-        ang.wt  <-  data.frame(matrix(FALSE, nrow = nrow(id.wt),  ncol = 1))
-      } else {
-        ang.wt  <-  data.frame(matrix(FALSE, nrow = 1,  ncol = 1))
-      }
-      if (length(id.mut) > 2) {
-        ang.mut <-  data.frame(matrix(FALSE, nrow = nrow(id.mut), ncol = 1))
-      } else {
-        ang.mut <-  data.frame(matrix(FALSE, nrow = 1, ncol = 1))
-      }
-            
+      
+      ang.wt  <-  data.frame(matrix(FALSE, nrow = nrow(id.wt),  ncol = 1))
+      ang.mut <-  data.frame(matrix(FALSE, nrow = nrow(id.mut), ncol = 1))
       colnames(ang.wt)   <-  c("T_or_F")
       colnames(ang.mut)  <-  c("T_or_F")
       
-      for (k in 1:(length(id.wt)/2)) {
+      for (k in 1:nrow(id.wt)) {
         detC     <-  as.numeric(names(dis.wt[id.wt[k, 1], order(dis.wt[id.wt[k, 1], ])][1:3]))
         Vec_1_X  <-  wt.data2[detC[2], ]$x - wt.data2[detC[1], ]$x
         Vec_1_Y  <-  wt.data2[detC[2], ]$y - wt.data2[detC[1], ]$y
@@ -167,7 +157,7 @@ for(cn in 5:length(np.case)) {
         } 
       }
       
-      for (k in 1:(length(id.mut)/2)) {
+      for (k in 1:nrow(id.mut)) {
         detC     <-  as.numeric(names(dis.mut[id.mut[k, 1], order(dis.mut[id.mut[k, 1], ])][1:3]))
         Vec_1_X  <-  mut.data2[detC[2], ]$x - mut.data2[detC[1], ]$x
         Vec_1_Y  <-  mut.data2[detC[2], ]$y - mut.data2[detC[1], ]$y
@@ -238,13 +228,32 @@ for(cn in 5:length(np.case)) {
     nrwt   <-  nrow(tc.h.bonding.wt[[i]])
     nrmut  <-  nrow(tc.h.bonding.mut[[i]])
     
-    row.names(tc.h.bonding.wt[[i]])   <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:nrwt)
-    row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:nrmut)
+    if (is.null(nrwt) != TRUE) { 
+      row.names(tc.h.bonding.wt[[i]])   <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:nrwt)
+    } else {
+      tc.h.bonding.wt[[i]]              <-  rbind(tc.h.bonding.wt[[i]], tc.h.bonding.wt[[i]])
+      row.names(tc.h.bonding.wt[[i]])   <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:2)
+    }
+    if (is.null(nrmut) != TRUE) {
+      row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:nrmut)
+    } else {
+      tc.h.bonding.mut[[i]]             <-  rbind(tc.h.bonding.mut[[i]], tc.h.bonding.mut[[i]])
+      row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:1)
+    }
+    
     
     row.names(sep.row)    <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-END")
-    
-    sum.tc.h.bonding.wt   <-  rbind(sum.tc.h.bonding.wt,  tc.h.bonding.wt [[i]], sep.row)
-    sum.tc.h.bonding.mut  <-  rbind(sum.tc.h.bonding.mut, tc.h.bonding.mut[[i]], sep.row)
+
+    if (is.null(nrwt) != TRUE) {     
+      sum.tc.h.bonding.wt   <-  rbind(sum.tc.h.bonding.wt,  tc.h.bonding.wt [[i]], sep.row)
+    } else {
+      sum.tc.h.bonding.wt   <-  rbind(sum.tc.h.bonding.wt,  tc.h.bonding.wt [[i]][1, ], sep.row)
+    }
+    if (is.null(nrmut) != TRUE) {
+      sum.tc.h.bonding.mut  <-  rbind(sum.tc.h.bonding.mut, tc.h.bonding.mut[[i]], sep.row)
+    } else {
+      sum.tc.h.bonding.mut  <-  rbind(sum.tc.h.bonding.mut, tc.h.bonding.mut[[i]][1, ], sep.row)
+    }
   }
   
   out.file  <-  paste0(case.name, "-Time-course_H-bonding_wt.csv")
@@ -403,8 +412,3 @@ for(cn in 5:length(np.case)) {
   out.file  <-  paste0(case.name, "-H-bonding_time-course-variation.csv")
   write.csv(summarized.hb, out.file, row.names = FALSE, quote = FALSE)
 }
-
-
-
-
-
