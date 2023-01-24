@@ -238,7 +238,7 @@ for (case.name in np.case) {
       row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:nrmut)
     } else {
       tc.h.bonding.mut[[i]]             <-  rbind(tc.h.bonding.mut[[i]], tc.h.bonding.mut[[i]])
-      row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:1)
+      row.names(tc.h.bonding.mut[[i]])  <-  paste0("Step-", formatC(i, width = 3, flag = 0), "-", 1:2)
     }
     
     
