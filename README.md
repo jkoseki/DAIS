@@ -18,3 +18,4 @@ The following assumes the case for parallelized calculations（R-script_parallel
 
 
 ## How to run DAIS
+In order to perform a DAIS calculation, a structure that serves as one Control and one or more Targets must be prepared in the MD calculation. If the MD calculation is done using Amber, it is possible to create a PDB for DAIS from prmtop and mdcrd files by using mdcrd2pdb_for-TDA.bash.
