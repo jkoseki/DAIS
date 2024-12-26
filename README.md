@@ -5,5 +5,5 @@ This is a computational framework for automatically extracting important structu
 
 ![image](https://user-images.githubusercontent.com/66928602/204697268-0a8c17b4-241c-4833-b211-ee8c30bd223c.png)
 
-# DAIS 
+## Environment Preparation 
 Create a conda environment using conda-TDA.yml. After activating the TDA conda environment, install the bio3d, TDA, readr, data.table, tidyr, stringr, kernlab, tidyverse, dplyr, openxlsx, earth, Rtsne, mclust, gplots, and pheatmap packages in R.
