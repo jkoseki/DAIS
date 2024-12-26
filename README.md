@@ -22,26 +22,3 @@ In order to perform a DAIS calculation, a structure that serves as one Control a
 
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
-XXX --- WT
-     |   |- /CA-data
-     |   |      |- Separate_00001.pdb
-     |   |      |- 　　　　・
-     |   |      |- Separate_XXXXX.pdb
-     |   |- /Location_detect
-     |   |- /Polar-loc_2
-     |   |- /Pu-loc_2
-     |   |- Separate_00001.pdb
-     |   |- 　　　　・
-     |   |- Separate_XXXXX.pdb
-
-XXX --- WT
-     |   |- /CA-data
-     |   |      |- Separate_00001.pdb
-     |   |      |- 　　　　・
-     |   |      |- Separate_XXXXX.pdb
-     |   |- /Location_detect
-     |   |- /Polar-loc_2
-     |   |- /Pu-loc_2
-     |   |- Separate_00001.pdb
-     |   |- 　　　　・
-     |   |- Separate_XXXXX.pdb
