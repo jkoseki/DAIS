@@ -18,4 +18,4 @@ The following assumes the case for parallelized calculations（R-script_parallel
 
 
 ## How to run DAIS
-In order to perform a DAIS calculation, a structure that serves as one Control and one or more Targets must be prepared in the MD calculation. If the MD calculation is done using Amber, it is possible to create a PDB for DAIS from prmtop and mdcrd files by using mdcrd2pdb_for-TDA.bash.
+In order to perform a DAIS calculation, a structure that serves as one Control and one or more Targets must be prepared in the MD calculation. If the MD calculation is done using Amber, it is possible to create a PDB for DAIS from prmtop and mdcrd files by using mdcrd2pdb_for-TDA.bash. On the other hand, if you have used other software to calculate the trajectory, please convert the trajectory into a single PDB that combines the trajectories. For that PDB, you can use PDB_for-TDA.bash to convert it to a PDB for DAIS.
