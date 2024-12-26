@@ -33,3 +33,15 @@ XXX --- WT
      |   |- Separate_00001.pdb
      |   |- 　　　　・
      |   |- Separate_XXXXX.pdb
+
+XXX --- WT
+     |   |- /CA-data
+     |   |      |- Separate_00001.pdb
+     |   |      |- 　　　　・
+     |   |      |- Separate_XXXXX.pdb
+     |   |- /Location_detect
+     |   |- /Polar-loc_2
+     |   |- /Pu-loc_2
+     |   |- Separate_00001.pdb
+     |   |- 　　　　・
+     |   |- Separate_XXXXX.pdb
