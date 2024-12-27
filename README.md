@@ -29,3 +29,8 @@ Within each Bash, the number of Cases, the number of PDBs (snapshots), and (only
 - numtpdf  :  number of PSBs
 - nproc    :  number of parallel CPU cores
 
+When all settings are done, run the bash scripts one by one. Alternatively, you can run AUTO-DAIS.bash to fully automate the DAIS calculation to the end.
+
+## DAIS outputs
+
+ 
