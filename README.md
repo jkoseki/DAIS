@@ -20,7 +20,9 @@ The following assumes the case for parallelized calculations（R-script_parallel
 
 
 ## How to run DAIS
-In order to perform a DAIS calculation, a structure that serves as one Control（WT） and one or more Cases must be prepared in the MD calculation. If the MD calculation is done using Amber, it is possible to create a PDB for DAIS from prmtop and mdcrd files by using mdcrd2pdb_for-TDA.bash. On the other hand, if you have used other software to calculate the trajectory, please convert the trajectory into a single PDB that combines the trajectories. For that PDB, you can use PDB_for-TDA.bash to convert it to a PDB for DAIS.
+In order to perform a DAIS calculation, a structure that serves as one Control（WT） and one or more Cases must be prepared in the MD calculation.
+If the MD calculation is done using Amber, it is possible to create a PDB for DAIS from prmtop and mdcrd files by using mdcrd2pdb_for-TDA.bash.
+On the other hand, if you have used other software to calculate the trajectory, please convert the trajectory into a single PDB that combines the trajectories. For that PDB, you can use PDB_for-TDA.bash to convert it to a PDB for DAIS.
 
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
@@ -34,5 +36,6 @@ Within each Bash, the number of Cases, the number of PDBs (snapshots), and (only
 When all settings are done, run the bash scripts one by one. Alternatively, you can run AUTO-DAIS.bash to fully automate the DAIS calculation to the end.
 
 ## DAIS outputs
-Detailed outputs are discharged in various ways, but the easiest way for users to grasp them is to look at the PDB discharged within Pickup-Variation-Data. Each file name consists of the feature structure site of the Case, the feature structure site of the WT, and the corresponding ID Score value.
+Detailed outputs are discharged in various ways, but the easiest way for users to grasp them is to look at the PDB discharged within Pickup-Variation-Data.
+Each file name consists of the feature structure site of the Case, the feature structure site of the WT, and the corresponding ID Score value.
 Then, by looking at [Case name]-Change-point.csv, you can know the C_alpha of the site where you observed the structural change.
