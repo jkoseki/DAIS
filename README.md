@@ -3,6 +3,8 @@ Dynamical Analysis of Interaction and Structural changes
 
 This is a computational framework for automatically extracting important structural features between two proteins without expertise or experience by simultaneously capturing essential geometric features and their dynamic changes from protein conformational change patterns obtained from molecular dynamics simulations. 
 
+Koseki J, et al., Topological data analysis of protein structure and inter/intra-molecular interaction changes attributable to amino acid mutations. Comput Struct Biotechnol J. 2023 May 9;21:2950-2959. doi: 10.1016/j.csbj.2023.05.009. PMID: 37228703
+
 ![image](https://user-images.githubusercontent.com/66928602/204697268-0a8c17b4-241c-4833-b211-ee8c30bd223c.png)
 
 ## Environment Preparation 
