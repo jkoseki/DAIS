@@ -22,4 +22,4 @@ In order to perform a DAIS calculation, a structure that serves as one Controlï¼
 
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
-![image](https://github.com/user-attachments/assets/f6e58788-3069-4aad-9b83-b07df2cb3df8)
+![image](https://github.com/user-attachments/assets/da6f3e34-a6d5-435f-bd05-fdd2a33acc13)
