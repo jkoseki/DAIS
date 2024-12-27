@@ -32,5 +32,5 @@ Within each Bash, the number of Cases, the number of PDBs (snapshots), and (only
 When all settings are done, run the bash scripts one by one. Alternatively, you can run AUTO-DAIS.bash to fully automate the DAIS calculation to the end.
 
 ## DAIS outputs
-
+Detailed outputs are discharged in various ways, but the easiest way for users to grasp them is to look at the PDB discharged within Pickup-Variation-Data. Each file name consists of the feature structure site of the Case, the feature structure site of the WT, and the corresponding ID Score value.
  
