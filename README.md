@@ -33,4 +33,4 @@ When all settings are done, run the bash scripts one by one. Alternatively, you 
 
 ## DAIS outputs
 Detailed outputs are discharged in various ways, but the easiest way for users to grasp them is to look at the PDB discharged within Pickup-Variation-Data. Each file name consists of the feature structure site of the Case, the feature structure site of the WT, and the corresponding ID Score value.
- 
+Then, by looking at [Case name]-Change-point.csv, you can know the C_alpha of the site where you observed the structural change.
