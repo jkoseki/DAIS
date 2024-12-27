@@ -23,7 +23,7 @@ In order to perform a DAIS calculation, a structure that serves as one Control�
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
 XXX --- WT <br>
-     |   |- /CA-data <br>
+     |___|- /CA-data <br>
      |   |      |- Separate_00001.pdb <br>
      |   |      |- 　　　　・ <br>
      |   |      |- Separate_XXXXX.pdb <br>
