@@ -23,3 +23,9 @@ In order to perform a DAIS calculation, a structure that serves as one Controlï¼
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
 ![image](https://github.com/user-attachments/assets/d9b8753f-5f29-49cf-971d-9c1b291d3eeb)
+
+Within each Bash, the number of Cases, the number of PDBs (snapshots), and (only if parallelism is possible) the number of parallelisms must be specified.
+- numcase  :  number of Cases 
+- numtpdf  :  number of PSBs
+- nproc    :  number of parallel CPU cores
+
