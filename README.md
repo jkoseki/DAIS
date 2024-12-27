@@ -22,3 +22,44 @@ In order to perform a DAIS calculation, a structure that serves as one Control a
 
 Running DAIS.bash in the execution directory creates all necessary scripts and calculation directories. At that time, the structure in the execution directory will be as follows.
 
+XXX --- WT\\
+     |   |- /CA-data
+     |   |      |- Separate_00001.pdb
+     |   |      |- 　　　　・
+     |   |      |- Separate_XXXXX.pdb
+     |   |- /Location_detect
+     |   |- /Polar-loc_2
+     |   |- /Pu-loc_2
+     |   |- Separate_00001.pdb
+     |   |- 　　　　・
+     |   |- Separate_XXXXX.pdb
+     |
+     -- CASE
+     |   |- /CA-data
+     |   |      |- Separate_00001.pdb
+     |   |      |- 　　　　・
+     |   |      |- Separate_XXXXX.pdb
+     |   |- /Location_detect
+     |   |- /Polar-loc_2
+     |   |- /Pu-loc_2
+     |   |- Separate_00001.pdb
+     |   |- 　　　　・
+     |   |- Separate_XXXXX.pdb
+     |
+     |-/Pickup-Varidation-Data
+     |-/r-plot
+     |-00-Preparation.bash
+     |-01P-CA_location2.bash
+     |-01P-CA_location2.R
+     |-02P-Position-Detector.bash
+     |-02P-Position-Detector.R
+     |-03-Case-Contl_Common.R
+     |-04P-PU-Coord.bash
+     |-04P-PU-Coord.R
+     |-05-08.bash
+     |-05-Convert-Polar.R
+     |-06-polar-analyses_vs_case.R
+     |-07-pickup-point_vs_case.R
+     |-08-change-point.R
+     |-09P-H-bonding_detecter.bash
+     |-09P-H-bonding_detecter.R
