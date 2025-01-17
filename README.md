@@ -16,7 +16,7 @@ Since the DAIS method can be implemented by executing the R script, the followin
 2. Save DAIS.bash, AUTO-DAIS.bash, mdcrd2pdb_for-TDA.bash, and PDB_for-TDA.bash in the bin directory and grant execution permission (chmod +x).
 3. Create a DAIS-Source directory in the bin directory and save the R script in it.
 
-The following assumes the case for parallelized calculations（R-script_parallel computing）.
+The following assumes the case for parallelized calculations (R-script_parallel computing).
 
 
 ## How to run DAIS
