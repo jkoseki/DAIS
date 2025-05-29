@@ -46,9 +46,6 @@ for (nc in 1:ncase) {
   contl.name  <-  paste(c(unlist(strsplit(contl[1],  "-"))[1:(contl.l - 1)]), collapse="-")
   contl.num   <-  sapply(strsplit(contl, "-"), function(x){x[contl.l]})
 
-  case.num    <-  case.num[-length(case.num)]
-  contl.num   <-  contl.num[-length(contl.num)]
-
   c.point     <-  data.frame("Dim"        =  NA,
                              "#"          =  NA,
                              "Case"       =  as.numeric(case.num),
